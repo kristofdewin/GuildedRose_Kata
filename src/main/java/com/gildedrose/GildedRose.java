@@ -20,7 +20,7 @@ class GildedRose {
                     if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
                         //not sulfuras
                         item.quality = item.quality - 1;
-                        //quality decreases every day
+                        //quality decreases every day -1
                         if(item.name.contains("Conjured")){
                             //if conjured quality -=1
                             item.quality -=1;
