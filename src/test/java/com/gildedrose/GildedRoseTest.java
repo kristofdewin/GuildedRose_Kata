@@ -29,14 +29,31 @@ class GildedRoseTest {
         app.updateQuality();
         assertEquals(8, app.items[0].quality);
     }
+    @Test
+    void sellDatePassedNotConjuredQualityNotSmallerThanZero(){
+        Item[] items = new Item[] { new Item("foo", -1, 1) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(0, app.items[0].quality);
+    }
+
+
 
     @Test
     void SellDatePassedConjured(){
         Item[] items = new Item[] { new NewItem("foo", -1, 10,true) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        //conjured items lose quality double fast 
+        //conjured items lose quality double as fast after sellin <0
         assertEquals(6, app.items[0].quality);
+    }
+
+    @Test
+    void sellDatePassedConjuredQualityNotSmallerThanZero(){
+        Item[] items = new Item[] { new NewItem("foo", -1, 2, true) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(0, app.items[0].quality);
     }
 
 }
