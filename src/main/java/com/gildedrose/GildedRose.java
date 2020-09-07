@@ -57,6 +57,9 @@ class GildedRose {
                     }
                 }
             }
+            if (items[i] instanceof NewItem && ((NewItem) items[i]).isConjured) {
+                items[i].quality -= 1;
+            }
         }
     }
 }
