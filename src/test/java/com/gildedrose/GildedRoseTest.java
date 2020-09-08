@@ -17,11 +17,11 @@ class GildedRoseTest {
     }
     @Test
     void itemPastSellTest() {
-        Item[] items = new Item[]{new Item("foo", 0, 10)};
+        Item[] items = new Item[]{new Item("foo", -1, 10)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals("foo", app.items[0].name);
-        assertEquals(-1,items[0].sellIn);
+        assertEquals(-2,items[0].sellIn);
         assertEquals(8,items[0].quality);
     }
 
@@ -93,10 +93,10 @@ class GildedRoseTest {
     }
     @Test
     void conjuredItemSellinNegativeTest(){
-        Item[] items = new Item[]{new Item("Conjured Mana Cake", 0, 10)};
+        Item[] items = new Item[]{new Item("Conjured Mana Cake", -1, 10)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals(-1,items[0].sellIn);
+        assertEquals(-2,items[0].sellIn);
         assertEquals(6,items[0].quality);
     }
 }
