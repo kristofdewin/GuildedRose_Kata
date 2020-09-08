@@ -7,3 +7,5 @@ added failing test for Conjured item
 altered GildedRose code to pass tests
 code and tests ok,
 still needs to be refactored to get rid of al the if statements.
+<lb>
+complete refactor of guildedRose added
