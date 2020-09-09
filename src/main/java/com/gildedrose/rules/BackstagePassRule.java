@@ -3,6 +3,12 @@ package com.gildedrose.rules;
 import com.gildedrose.Item;
 
 public class BackstagePassRule implements Rule {
+
+    //special item, earns 1 quality every day
+    //quality never negative
+    //if sellin negative quality set to 0
+    //if sellin smaller than 11 +1 quality
+    //if sellin smaller than 3 + 1 quality
     @Override
     public Item applyRule(Item item) {
         if (item.quality < 50) {

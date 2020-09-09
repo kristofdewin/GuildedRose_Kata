@@ -2,6 +2,9 @@ package com.gildedrose.rules;
 
 import com.gildedrose.Item;
 
+//conjured item, loses 2 quality every day
+//quality never negative
+//if sellin negative 2 extra quality point are lost
 public class ConjuredRule implements Rule {
     @Override
     public Item applyRule(Item item) {
